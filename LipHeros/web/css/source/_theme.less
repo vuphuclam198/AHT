@@ -60,14 +60,16 @@
 //
 //  Navigation
 //  ---------------------------------------------
-
-@navigation__background: @color-gray94;
+@header-top__bg: @color-header-blue;
+@gray-nav__bg: @color-yellow-light;
+@navigation__background: @gray-nav__bg;
 @navigation-level0-item__active__color: @primary__color;
 
 @submenu-item__active__color: @navigation-level0-item__active__color;
 
+@navigation-desktop-level0-item__padding: 13px 15px;
 //  Desktop navigation
-@navigation-desktop-level0-item__line-height: 47px;
+@navigation-desktop-level0-item__line-height: 14px;
 @submenu-desktop__font-weight: @font-weight__regular;
 @submenu-desktop-item__active__color: @navigation-level0-item__active__color;
 
@@ -297,3 +299,11 @@
 //  ---------------------------------------------
 
 @copyright__background-color: @color-gray-middle4;
+
+
+.transform(@string){
+	-webkit-transform: @string;
+	-moz-transform: 	 @string;
+	-ms-transform: 		 @string;
+	-o-transform: 		 @string;
+}

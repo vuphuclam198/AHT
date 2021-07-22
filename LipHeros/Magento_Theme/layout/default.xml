@@ -7,12 +7,27 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="logo">
-            <!-- <arguments> -->
-                <!-- <argument name="logo_img_width" xsi:type="number">147</argument>
-                <argument name="logo_img_height" xsi:type="number">103</argument> -->
-                <!-- <argument name="logo_src" xsi:type="string">your_logo.img</argument> -->
-            <!-- </arguments> -->
-        </referenceBlock>
+    <referenceContainer name="header.panel.wrapper">
+        <!-- <referenceBlock name="top.links" remover="true" /> -->
+        <container name="header.top.right" htmlTag="div" htmlClass="header-top-right">
+            <block name="author-menu" htmlTag="div" htmlClass="author-account"/>
+        </container>
+    </referenceContainer>
+
+    <referenceContainer name="page.top">
+        <block class="Magento\Cms\Block\Block" name="block_identifier" after="navigation.sections">
+            <arguments>
+                <argument name="block_id" xsi:type="string">header_bottom</argument>
+            </arguments>
+        </block>
+    </referenceContainer>
+    
+    <referenceBlock name="header" remove="true"/>
+    <referenceBlock name="header.panel" remove="true"/>
+    <referenceContainer name="header-wrapper" remove="true" />
+    <move element="logo" destination="header.panel.wrapper" before="-" />
+    <move element="top.search" destination="header.top.right" before="-"/>
+    <move element="header.links" destination="author-menu" after="top.search"/>
+    <move element="minicart" destination="header.top.right" after="minicart" />
     </body>
 </page>
