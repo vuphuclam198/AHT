@@ -10,24 +10,54 @@
     <referenceContainer name="header.panel.wrapper">
         <!-- <referenceBlock name="top.links" remover="true" /> -->
         <container name="header.top.right" htmlTag="div" htmlClass="header-top-right">
-            <block name="author-menu" htmlTag="div" htmlClass="author-account"/>
+            <container name="author-menu" htmlTag="div" htmlClass="author-account">
+                <block class="Magento\Framework\View\Element\Template" name="icon.header.account" template="Magento_Theme::account/author.phtml" />
+            </container>
         </container>
     </referenceContainer>
 
     <referenceContainer name="page.top">
-        <block class="Magento\Cms\Block\Block" name="block_identifier" after="navigation.sections">
+        <block class="Magento\Cms\Block\Block" name="block.header.bottom" after="navigation.sections">
             <arguments>
                 <argument name="block_id" xsi:type="string">header_bottom</argument>
             </arguments>
         </block>
     </referenceContainer>
     
+    <referenceContainer name="footer-container" >
+
+        <referenceContainer name="footer">
+            <block class="Magento\Cms\Block\Block" name="footer.top.standard" before="-">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">footer-top</argument>
+                </arguments>
+            </block>
+            <container name="footer.middle" htmlTag="div" htmlClass="footer-middle">
+                <block class="Magento\Cms\Block\Block" name="footer.middle.link" before="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-middle</argument>
+                    </arguments>
+                </block>
+            </container>
+
+            <container name="footer.bottom" htmlTag="div" htmlClass="footer-bottom" after="-">
+                <block class="Magento\Cms\Block\Block" name="footer.bottom.cart" after="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">footer-bottom-cart</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+        <referenceBlock name="footer_links" remove="true"/>
+    </referenceContainer>
     <referenceBlock name="header" remove="true"/>
     <referenceBlock name="header.panel" remove="true"/>
     <referenceContainer name="header-wrapper" remove="true" />
     <move element="logo" destination="header.panel.wrapper" before="-" />
     <move element="top.search" destination="header.top.right" before="-"/>
-    <move element="header.links" destination="author-menu" after="top.search"/>
+    <move element="header.links" destination="author-menu" after="-"/>
     <move element="minicart" destination="header.top.right" after="minicart" />
+    <move element="form.subscribe" destination="footer.middle" after="-"/>
+    <move element="copyright" destination="footer.bottom" before="-"/>
     </body>
 </page>

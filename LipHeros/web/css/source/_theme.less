@@ -18,9 +18,11 @@
 //  Fonts
 @icons__font-path: '@{baseDir}fonts/Luma-Icons';
 @icons__font-name: 'luma-icons';
+@icon__font-fontawesome: 'Font Awesome 5 Free';
 @font-family-montserrat__bold: 'Montserrat-Bold';
 @font-family-montserrat__extrabold: 'Montserrat-ExtraBold';
 @font-family-montserrat__semiBold: 'Montserrat-SemiBold';
+@font-family-komika-title-axis__regular: 'komika-title-axis-regular';
 
 //  Color nesting
 @panel__background-color: @color-gray-light0;
@@ -143,7 +145,7 @@
 @icon-arrow-left-thin: false;
 @icon-arrow-down-thin: false;
 @icon-wishlist-empty: '\e601';
-
+@icon-star: '\f005';
 //
 //  Messages
 //  ---------------------------------------------
@@ -294,6 +296,8 @@
 //  Checkout
 @checkout-sidebar__columns: 8;
 
+//button cart
+@cart-background__primary: @color-header-blue;
 //
 //  Footer
 //  ---------------------------------------------
@@ -307,3 +311,6 @@
 	-ms-transform: 		 @string;
 	-o-transform: 		 @string;
 }
+
+// override @color @background
+@text__color: #000;
