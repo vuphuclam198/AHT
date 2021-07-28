@@ -5,7 +5,7 @@
 @slick-font-path: "./fonts/";
 @slick-font-family: "slick";
 @slick-loader-path: "./";
-@slick-arrow-color: white;
+@slick-arrow-color: #ddd;
 @slick-dot-color: #000;
 @slick-dot-color-active: @slick-dot-color;
 @slick-prev-character: "←";
@@ -54,7 +54,7 @@
 }
 
 .slick-prev:before, .slick-next:before {
-    font-family: @slick-font-family;
+    font-family: 'luma-icons';
     // font-size: 20px;
     line-height: 1;
     color: @slick-arrow-color;
@@ -170,28 +170,28 @@
     }
 }
 
-.featured-items {
-    .slick-prev,
-    .slick-next {
-        top: 39%;
-    }
-}
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
-    .widget-product-grid {
-        .slick-prev,
-        .slick-next {
-            top: 23%;
-        }
-        .slick-next {
-            right: 30px;
+// .featured-items {
+//     .slick-prev,
+//     .slick-next {
+//         top: 39%;
+//     }
+// }
+// .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+//     .widget-product-grid {
+//         .slick-prev,
+//         .slick-next {
+//             top: 23%;
+//         }
+//         .slick-next {
+//             right: 30px;
             
-        }
-        .slick-prev {
-            left: -10px;
+//         }
+//         .slick-prev {
+//             left: -10px;
             
-        }
-    }
-}
+//         }
+//     }
+// }
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__s) {
     .widget-product-grid {
         .slick-next {
@@ -229,22 +229,27 @@
     }
 
 }
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
     .widget-product-grid {
         .slick-prev,
         .slick-next {
-            top: 32%;
+            font-size: 30px;
+            font-weight: 400;
         }
         .slick-next {
-            right: 0;
+            left: 104%;
+            top: 48%;
+            transform: rotate(-90deg);
             &:before {
-                content: url(../image/next.png);
+                content: '\e622';
             }
         }
         .slick-prev {
-            left: -3.5%;
+            right: 103.1%;
+            top: 42.2%;
+            transform: rotate(90deg);
             &:before {
-                content: url(../image/prev.png);
+                content: '\e622';
             }
         }
         .slick-list {
@@ -253,46 +258,36 @@
     }
     
 }
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__l) {
-    .widget-product-grid {
-        .slick-next {
-            right: -2px;
-        }
-        .slick-prev {
-            left: -3%;
-        }
-    }
-    
-}
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = 1100px) {
-    .widget-product-grid {
-        .slick-next {
-            right: 1%;
-        }
-        .slick-prev {
-            left: -1%;
-        }
-        
-    }
-    body {
-        background-color: red;
-    }
 
-}
-.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
-    .widget-product-grid {
-        .slick-prev,
-        .slick-next {
-            top: 33%;
-        }
-        .slick-next {
-            right: -5.5%;
-        }
-        .slick-prev {
-            left: -7%;
-        }
+// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = 1100px) {
+//     .widget-product-grid {
+//         .slick-next {
+//             right: 1%;
+//         }
+//         .slick-prev {
+//             left: -1%;
+//         }
         
-    }
+//     }
+//     body {
+//         background-color: red;
+//     }
+
+// }
+// .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+//     .widget-product-grid {
+//         .slick-prev,
+//         .slick-next {
+//             top: 33%;
+//         }
+//         .slick-next {
+//             right: -5.5%;
+//         }
+//         .slick-prev {
+//             left: -7%;
+//         }
+        
+//     }
     
     
-}
+// }

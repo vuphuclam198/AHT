@@ -1,6 +1,6 @@
 & when (@media-common = true) {
     .discover-heroes {
-        margin-top: 40px;
+        margin-top: 30px;
         
         .discover-content {
             margin-top: 30px;
@@ -109,6 +109,10 @@
         }
     }
 
+    .banner-mobile {
+        display: none;
+    }
+
     .banner-item {
         .item-content {
             position: relative;
@@ -199,6 +203,14 @@
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .banner-mobile {
+        display: block;
+    }
+
+    .banner-desktop {
+        display: none;
+    }
+
     .discover-heroes {
         margin-top: 15px;
 
@@ -258,6 +270,39 @@
 }
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .banner-item {
+        .banner-content {
+            width: unset;
+            max-width: 350px;
+            left: 43px;
+            padding-bottom: 19px;
+            position: absolute;
+            transform: none;
+            top: 85px;
+            text-align: center;
+
+            .content-top {
+                font-size: 12px;
+                margin-bottom: 0;
+                letter-spacing: 2.25px;
+            }
+
+            .content-middle {
+                font-size: 26px;
+                margin-bottom: 12px;
+                line-height: 32px;
+                margin-left: 0;
+                letter-spacing: 0
+            }
+
+            .banner__link {
+                font-size: 13px;
+                margin-left: 0;
+                padding: 12px 22px 11px 22px;
+            }
+        }
+    }
+
     .discover-heroes .discover-list__item {
         margin-bottom: 37px;
         .content {
@@ -277,6 +322,10 @@
             }
         }
 
+        .instagram-link {
+            margin-top: 43px;
+        }
+
         .slick-list {
             margin: 0 -8px;
         }
@@ -286,8 +335,4 @@
         }
     }
 
-    .owl-carousel .owl-stage-outer {
-        height: 250px !important;
-        overflow: unset !important;
-    }
 }
