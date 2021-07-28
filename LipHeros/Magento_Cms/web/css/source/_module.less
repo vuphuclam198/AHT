@@ -8,7 +8,7 @@
 
         .discover-list {
             display: flex;
-            flex-wrap: wrap;
+            // flex-wrap: wrap;
             justify-content: space-between;
         }
 
@@ -57,12 +57,12 @@
     .best-sellers {
         padding-bottom: 13px;
         .block-content {
-            max-width: 1084px;
+            max-width: 1057px;
             margin: 0 auto;
         }
 
         .best-sellers-content {
-            margin-left: 17px;
+            margin-left: -10px;
             margin-top: 22px;
         }
 
@@ -75,6 +75,7 @@
 
             .product-item-photo {
                 display: inline-block;
+                max-width: 100%;
             }
         }
     }
@@ -154,5 +155,139 @@
         }
     }
    
+    .instagram-feed {
+        .instagram-content {
+            margin-top: 23px;
+        }
+
+        .slick-list {
+            margin: 0 -4px;
+        }
+
+        .slick-slide {
+            margin: 0 4px;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .instagram-link {
+            text-align: center;
+            margin-top: 20px;
+
+            .link {
+                color: @color-black;
+                display: inline-block;
+                font-size: 14px;
+                font-family: @font-family-montserrat__semiBold;
+                line-height: 20px;
+                position: relative;
+
+                &:after {
+                    content: '';
+                    background: @color-black;
+                    width: 100%;
+                    height: 2px;
+                    left: 0;
+                    position: absolute;
+                    top: 100%;
+                }
+            }
+        }
+    }
 }
 
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .discover-heroes {
+        margin-top: 15px;
+
+        .discover-content {
+            margin-top: 8px;
+        }
+
+        .discover-list {
+            display: block;
+        }
+
+        .discover-list__item {
+            margin-bottom: 33px;
+
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+
+            &:nth-child(2) {
+                margin-bottom: 24px;
+                padding-left: 10px;
+
+                img {
+                    transform: scale(1.05);
+                }
+
+                .content {
+                    margin-top: 19px;
+                }
+            }
+        }
+
+    }
+    
+    .best-sellers {
+        margin-top: 44px;
+        .best-sellers-content {
+            margin-left: 0;
+            margin-top: 5px;
+            padding: 0 3px 0 2px;
+        }
+
+        .heading-title .title{
+            padding: 6px 21px;
+        }
+    }
+
+    .heading-title .title {
+        font-size: 20px;
+        padding: 6px 18px;
+    }
+
+    .instagram-feed {
+        margin-top: 40px;
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .discover-heroes .discover-list__item {
+        margin-bottom: 37px;
+        .content {
+        text-align: center;
+        margin-top: 16px;
+        margin-bottom: 15px;
+        }
+    }
+
+    .instagram-feed {
+        .instagram-content {
+            margin-top: 14px;
+
+
+            .instagram-item {
+                width: 140px;
+            }
+        }
+
+        .slick-list {
+            margin: 0 -8px;
+        }
+
+        .slick-slide {
+            margin: 0 8px;
+        }
+    }
+
+    .owl-carousel .owl-stage-outer {
+        height: 250px !important;
+        overflow: unset !important;
+    }
+}

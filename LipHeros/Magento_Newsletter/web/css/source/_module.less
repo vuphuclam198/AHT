@@ -1,0 +1,243 @@
+// /**
+//  * Copyright © Magento, Inc. All rights reserved.
+//  * See COPYING.txt for license details.
+//  */
+
+//
+//  Common
+//  _____________________________________________
+
+& when (@media-common = true) {
+
+    //  Newsletter subscription
+    .block.newsletter {
+        margin-bottom: 20px;
+
+        .form.subscribe {
+            display: table;
+            width: 100%;
+        }
+
+        .fieldset {
+            display: table-cell;
+            margin: 0;
+            padding: 0;
+            vertical-align: top;
+        }
+
+        .field {
+            margin: 0;
+
+            .control {
+                .lib-icon-font(
+                @icon-envelope,
+                @_icon-font-size: 16px,
+                @_icon-font-line-height: 32px,
+                @_icon-font-color: @form-element-input-placeholder__color,
+                @_icon-font-margin: 0 0 0 8px
+                );
+
+                &:before {
+                    position: absolute;
+                    content: '';
+                }
+
+                display: block;
+            }
+        }
+
+        input {
+            border-radius: 3px;
+            border: none;
+            color: @color-price-gray;
+            font-size: 13px;
+            font-family: @font-family-montserrat__semiBold;
+            margin-right: 35px;
+            padding: 26px 0;
+            padding-left: 17px; // Reset some default Safari padding values.
+        }
+
+        .title {
+            display: block;
+        }
+
+        .tutorial {
+            color: @color-white;
+            font-size: 13px;
+            font-family: @font-family-montserrat__semiBold;
+            max-width: 395px;
+            margin-bottom: 13px;
+            line-height: 18px;
+            opacity: .8;
+        }
+
+        .label {
+            &:extend(.abs-visually-hidden all);
+        }
+
+        .actions {
+            display: table-cell;
+            vertical-align: top;
+            width: 1%;
+        }
+
+        .action.subscribe {
+            background: @gray-nav__bg;
+            border-bottom-left-radius: 0;
+            border-top-left-radius: 0;
+            color: @color-black;
+            margin-left: -1px;
+            white-space: nowrap;
+            font-family: @font-family-montserrat__bold;
+            text-transform: uppercase;
+            font-size: 15px;
+            letter-spacing: .5px;
+            line-height: 18px;
+            padding: 17px 17px;
+            border: none;
+        }
+
+        .social-link {
+            margin-top: 27px;
+        }
+
+        .link {
+            color: @color-white;
+            display: inline-block;
+            font-size: 25px;
+            margin-right: 21px;
+
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__xl) {
+    .block.newsletter {
+        margin-left: 118px;
+    }
+}
+
+@media only screen and(max-width: @screen__l) {
+    .block.newsletter {
+        width: 100%;
+        order: 1;
+
+        .title {
+            text-align: center;
+        }
+
+        .tutorial {
+            text-align: center;
+            margin: 0 auto;
+            max-width: 500px;
+            padding-bottom: 20px;
+        }
+
+        .content {
+            margin-bottom: 20px;
+        }
+
+        .social-link {
+            float: right;
+            margin-top: 0;
+        }
+
+        .need-help__below {
+            float: left;
+            position: unset;
+        }
+    }
+}
+
+//
+//  Desktop
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .block.newsletter {
+        max-width: 100%;
+        // width: 100%;
+    }
+}
+
+//
+//  Mobile
+//  _____________________________________________
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block {
+        &.newsletter {
+            input {
+                font-size: 12px;
+                padding-left: 30px;
+            }
+
+            .field {
+                .control:before {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .block.newsletter {
+        border-bottom: 1px solid @color-white;
+        padding-bottom: 28px;
+        margin-bottom: 2px;
+        
+        .form.subscribe {
+            display: block;
+        }
+
+        .title {
+            margin-bottom: 7px;
+        }
+
+        .tutorial {
+            line-height: 20px;
+            padding-bottom: 12px;
+        }
+
+        input {
+            font-size: 13px;
+            margin-bottom: 9px;
+            padding: 22px 0;
+            padding-left: 16px;
+        }
+
+        .action.subscribe {
+            display: block;
+            width: 100%;
+            padding: 12px 17px;
+        }
+
+        .social-link {
+            float: none;
+            margin-top: -2px;
+            text-align: center;
+
+            .link {
+                margin: 0 10px;
+            }
+        }
+    
+        .need-help__below {
+            float: none;
+
+            .blow-content__item {
+                .text {
+                    letter-spacing: -.2px;
+                }
+            }
+    
+            .bellow-content {
+                max-width: 274px;
+                margin: 0 auto;
+                margin-top: 19px;
+                grid-gap: 25px;
+            }
+        }
+    }
+}

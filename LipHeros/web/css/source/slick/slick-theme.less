@@ -113,7 +113,7 @@
     display: block;
     text-align: center;
     padding: 0;
-    margin: 0 0 0 -9px;
+    margin: 0 0 0 5px;
     width: 100%;
     li {
         position: relative;
@@ -204,7 +204,7 @@
         }
     }
 }
-.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+@media only screen and (max-width: 767px) {
     .widget-product-grid {
         .slick-prev,
         .slick-next {
@@ -218,7 +218,16 @@
             left: 20px;
             
         }
+
+        .slick-list {
+            margin:0 -5px;
+        }
     }
+
+    .slick-dots {
+        margin: 0;
+    }
+
 }
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .widget-product-grid {
@@ -239,7 +248,7 @@
             }
         }
         .slick-list {
-            margin-left: -28px;
+            margin:0 -28px;
         }
     }
     

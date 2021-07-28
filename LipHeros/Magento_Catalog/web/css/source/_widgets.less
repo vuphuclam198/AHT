@@ -92,6 +92,29 @@
 //  Mobile
 //  _____________________________________________
 
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block.widget {
+        .product-item-details {
+            margin-top: 11px;
+            padding-left: 0;
+        
+            .product-item-name {
+                margin-top: 6px;
+            }
+
+            .product-item-inner {
+                margin-top: 12px;
+            }
+
+            .price-final_price {
+                margin-top: 15px;
+            }
+
+            
+        }
+    }
+}
+
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__s) {
     .block.widget .products-grid .product-item,
     .page-layout-1column .block.widget .products-grid .product-item,

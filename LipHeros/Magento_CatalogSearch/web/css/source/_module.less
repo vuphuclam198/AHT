@@ -73,7 +73,7 @@
         }
 
         .control {
-            border-top: 1px solid @border-color__base;
+            // border-top: 1px solid @border-color__base;
             clear: both;
             margin: 0 -@layout__width-xs-indent -1px;
             padding: 0 @layout__width-xs-indent;
@@ -226,6 +226,18 @@
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .block-search {
         margin-top: @indent__s;
+        position: absolute;
+        left: 36px;
+        top: 2px;
+
+        .label {
+            float: left;
+
+            &:before {
+                color: @color-white;
+                font-size: 23px;
+            }
+        }
     }
 }
 
@@ -263,6 +275,11 @@
             .transform(translateX(-100%));
         }
 
+        .input-text.show {
+            .transform(translateX(0));
+            transition: all linear .5s;
+        }
+
         .action.search {
             display: inline-block;
             position: unset;
@@ -290,6 +307,10 @@
             &:before {
                 font-weight: 700;
                 font-size: 23px;
+            }
+
+            &.active:before {
+                color: @color-black;
             }
         }
     }

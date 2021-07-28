@@ -26,12 +26,18 @@
     
     <referenceContainer name="footer-container" >
 
+        <block class="Magento\Cms\Block\Block" name="footer.top.standard" before="-">
+            <arguments>
+                <argument name="block_id" xsi:type="string">footer-top</argument>
+            </arguments>
+        </block>
+
         <referenceContainer name="footer">
-            <block class="Magento\Cms\Block\Block" name="footer.top.standard" before="-">
+            <block class="Magento\Cms\Block\Block" name="footer-socialmedia-link" before="-">
                 <arguments>
-                    <argument name="block_id" xsi:type="string">footer-top</argument>
+                    <argument name="block_id" xsi:type="string">footer_site_logo</argument>
                 </arguments>
-            </block>
+                </block>
             <container name="footer.middle" htmlTag="div" htmlClass="footer-middle">
                 <block class="Magento\Cms\Block\Block" name="footer.middle.link" before="-">
                     <arguments>
@@ -41,6 +47,13 @@
             </container>
 
             <container name="footer.bottom" htmlTag="div" htmlClass="footer-bottom" after="-">
+                <container name="footer.bottom.copyright" htmlTag="div" htmlClass="copyright-privacy">
+                    <block class="Magento\Cms\Block\Block" name="footer.bottom.copyright2" after="-">
+                        <arguments>
+                            <argument name="block_id" xsi:type="string">footer-bottom-copyright</argument>
+                        </arguments>
+                    </block>
+                </container>
                 <block class="Magento\Cms\Block\Block" name="footer.bottom.cart" after="-">
                     <arguments>
                         <argument name="block_id" xsi:type="string">footer-bottom-cart</argument>
@@ -58,6 +71,6 @@
     <move element="header.links" destination="author-menu" after="-"/>
     <move element="minicart" destination="header.top.right" after="minicart" />
     <move element="form.subscribe" destination="footer.middle" after="-"/>
-    <move element="copyright" destination="footer.bottom" before="-"/>
+    <move element="copyright" destination="footer.bottom.copyright" before="-"/>
     </body>
 </page>
