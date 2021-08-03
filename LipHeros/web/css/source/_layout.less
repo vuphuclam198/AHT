@@ -38,6 +38,10 @@
             .lib-vendor-prefix-order(2);
         }
     }
+
+    .sidebar.sidebar-additional {
+        display: none;
+    }
 }
 
 //
@@ -55,6 +59,7 @@
     .page-wrapper > .page-bottom, 
     .block.category.event, 
     .top-container {
+        overflow: hidden;
         padding-left: 7px;
         padding-right: 7px;
     }
@@ -120,6 +125,8 @@
         #lib-layout-columns > .main();
         &:extend(.abs-add-box-sizing-desktop all);
         min-height: 300px;
+        width: 82.5%;
+        padding-left: 0;
     }
 
     .sidebar-main {

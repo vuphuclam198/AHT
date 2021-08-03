@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <!-- <move element="catalog.topnav" destination="sidebar.main" /> -->
+
+         <referenceContainer name="sidebar.main">
+            <block class="Magento\Theme\Block\Html\Topmenu" name="catalog.topnav.aside" template="Magento_Catalog::html/categories-aside.phtml" before="-"/>
+        </referenceContainer>
+
+        <move element="product_list_toolbar" destination="columns" before="div.sidebar.main" />
+        <!-- <move element="home.catalog.product.list.toolbar.top" destination="columns.top" after="category.view.container" /> -->
+        <referenceContainer name="main.content">
+             <block class="Magento\Cms\Block\Block" name="block.recently.viewed.products" after="columns">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">recently-viewed-products</argument>
+                </arguments>
+            </block>        
+
+            <container name="seo.text.container" htmlTag="div" htmlClass="seo-text" after="block.recently.viewed.products">
+                <block class="Magento\Cms\Block\Block" name="block.seo.text" before="-">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">seo-text</argument>
+                    </arguments>
+                </block>  
+
+                <block class="Magento\Cms\Block\Block" name="block.question.category">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">question-category</argument>
+                    </arguments>
+                </block>  
+                
+            </container>
+        </referenceContainer>
+    </body>
+</page>

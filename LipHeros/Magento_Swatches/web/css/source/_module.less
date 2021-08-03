@@ -93,7 +93,7 @@
             }
 
             &-options {
-                margin: 9px 0 0 0;
+                margin: 10px 1px 0 0;
 
                 &:focus {
                     box-shadow: none;
@@ -127,13 +127,13 @@
         }
 
         &-option {
-            .lib-css(border, @swatch-option__border);
+            // .lib-css(border, @swatch-option__border);
             border-radius: 50%;
             cursor: pointer;
             display: inline-block;
             float: none;
-            height: 16px;
-            width: 16px;
+            height: 18px;
+            width: 18px;
             margin: 0 5px;
             max-width: 100%;
             min-width: unset;
@@ -177,8 +177,8 @@
             &.image,
             &.color {
                 &:not(.disabled):hover {
-                    .lib-css(border, @img-color-swatch-option__hover__border);
-                    .lib-css(outline, @img-color-swatch-option__hover__outline);
+                    .lib-css(border, none);
+                    .lib-css(outline, none);
                 }
             }
 

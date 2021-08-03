@@ -209,15 +209,32 @@
         margin-bottom: @indent__s;
     }
 
-    .minicart-wrapper .action.showcart:before{
-        content: '\f290';
-        color: @color-white;
-        font-family: 'Font Awesome 5 Free';
-        font-weight: 900;
-        vertical-align: middle;
-        font-size: 22px;
-        line-height: 22px;
+    .minicart-wrapper .action.showcart{
+        &:before{
+            content: '\f290';
+            color: @color-white;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            vertical-align: middle;
+            font-size: 22px;
+            line-height: 22px;
+        }
+
+        &.active:before {
+            content: '\f290';
+            color: @color-white;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            vertical-align: middle;
+            font-size: 22px;
+            line-height: 22px;
+        }
     }
+
+    .minicart-wrapper .action.showcart:hover:before {
+        color: @color-white;
+    }
+
 }
 
 //
@@ -226,14 +243,15 @@
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .block-search {
-        margin-top: @indent__s;
-        position: absolute;
-        left: 36px;
-        top: 2px;
+        // margin-top: @indent__s;
+        // position: absolute;
+        // left: 36px;
+        // top: 2px;
         z-index: 10;
-
+        overflow: hidden;
+        margin-top: -2px;
         .label {
-            float: left;
+            // float: left;
 
             &:before {
                 color: @color-white;

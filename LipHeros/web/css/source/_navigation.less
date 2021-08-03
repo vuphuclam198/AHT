@@ -52,6 +52,34 @@
                 text-transform: uppercase;
             }
         }
+
+        &.sidebar {
+            background: none;
+
+            ul {
+                padding: 0;
+            }
+
+            li.level0 {
+                display: block;
+                text-align: left;
+            }
+
+            .level0 > .level-top {
+                color: @color-nav-sidebar;
+                font-family: @font-family-montserrat__regular;
+                font-size: 12px;
+                font-weight: 400;
+                letter-spacing: 0;
+                line-height: 26px;
+                padding: 0;
+                text-transform: none;
+
+                &:hover {
+                    text-decoration: underline ;
+                }
+            }
+        }
     }
 }
 
@@ -217,7 +245,7 @@
 
         .nav-sections {
             @_shadow: 0 0 5px 0 rgba(50, 50, 50, .75);
-
+            background: @color-gray-3d3d3d;;
             .lib-css(box-shadow, @_shadow, 1);
             left: 0;
             z-index: 99;
@@ -390,7 +418,7 @@
 
     .navigation li.level0 {
         &:nth-child(2) {
-            margin-right: 6px;
+            margin-right: 8px;
         }
     }
 }

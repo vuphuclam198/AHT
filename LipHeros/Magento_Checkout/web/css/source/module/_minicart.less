@@ -276,8 +276,9 @@
         }
 
         .product-item-details {
-            padding-left: 88px;
-
+            padding-left: 0px;
+            display: block;
+            
             .price {
                 font-weight: @font-weight__bold;
             }
@@ -285,6 +286,7 @@
             .price-including-tax,
             .price-excluding-tax {
                 margin: @indent__xs 0;
+                color: @color-black;
             }
 
             .weee[data-label] {
@@ -317,6 +319,7 @@
             .toggle {
                 &:extend(.abs-toggling-title all);
                 border: 0;
+                color: @color-black;
                 padding: 0 0 @indent__xs 0;
                 white-space: nowrap;
 
