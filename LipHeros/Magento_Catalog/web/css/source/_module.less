@@ -26,6 +26,10 @@
         .lib-css(color, @product-price__muted__color);
     }
 
+    .img-attribute {
+        display: block;
+        margin-bottom: 10px;
+    }
     .block-viewed-products-grid {
         margin-top: 49px;
 
@@ -245,7 +249,7 @@
 
                 .price-container {
                     > span {
-                        display: block;
+                        // display: block;
                         margin-bottom: @indent__xs;
 
                         &:last-child {
@@ -293,7 +297,8 @@
         }
 
         .product-info-stock-sku {
-            display: table-cell;
+            // display: table-cell;
+            display: none;
             padding-bottom: @indent__s;
             padding-left: 10%;
             text-align: right;
@@ -417,7 +422,8 @@
     .product-options-bottom .price-box,
     .product-info-price .price-box {
         .lib-css(color, @product-info-price);
-        display: table-cell;
+        // display: table-cell;
+        display: inline-block;
         padding-bottom: @indent__s;
         vertical-align: top;
 
@@ -432,7 +438,7 @@
 
         .price-container {
             > span {
-                display: block;
+                // display: block;
                 margin-bottom: @indent__xs;
 
                 &:last-child {
@@ -460,10 +466,17 @@
         }
     }
 
+
+
     .box-tocart {
         &:extend(.abs-box-tocart all);
 
         .field.qty {
+            #custom-qty {
+                display: inline-block;
+                margin-right: 15px;
+            }
+
         }
 
         .input-text.qty {
@@ -471,6 +484,9 @@
         }
 
         .actions {
+            .price-final_price {
+                display: none;
+            }
         }
 
         .action.tocart {
@@ -483,6 +499,7 @@
 
             vertical-align: top;
         }
+
     }
 
     .product-addto-links {
@@ -490,6 +507,12 @@
 
         .action {
             margin-right: 5%;
+        }
+
+        img {
+            width: 32px;
+            height: 32px;
+            vertical-align: middle;
         }
     }
 
@@ -675,6 +698,37 @@
         /* transform: translateY(-50%); */
         font-size: 24px;
         text-transform: uppercase;
+    }
+
+    .price-label {
+        display: none;
+    }
+
+    .section-rtb {
+        .rtb-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .rtb-item {
+            display: inline-block;
+
+            a {
+                display: block
+            }
+        }
+    }
+
+    .product-attr-content {
+        margin-top: 30px;
+        .product.attribute {
+            padding: 10px 5px;
+
+            .value {
+                margin-top: 5px
+            }
+        }
     }
 }
 

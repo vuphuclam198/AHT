@@ -116,7 +116,7 @@
         },
 
         pdpRvSlickInit: function(){
-            $('.block-viewed-products-grid .product-items').slick({
+            $('.catalog-category-view .block-viewed-products-grid .product-items').slick({
                 dots: true,
                 infinite: false,
                 speed: 300,
@@ -132,6 +132,23 @@
                     }
                 ]
             });
-        }
+
+            $('.catalog-product-view .block-viewed-products-grid .product-items').slick({
+                dots: false,
+                infinite: false,
+                speed: 300,
+                slidesToShow: 2,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 960,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
+            });
+        },
     });
 });

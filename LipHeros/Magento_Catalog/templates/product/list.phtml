@@ -124,87 +124,54 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                     <div class="lable-attribute">
                       <div class="lable-attribute__item best">
                             <?php 
-                                $brand_attribute = $_product->getResource()->getAttribute('best_seller');
+                                $brand_attribute = $_product->getResource()->getAttribute('product_label');
 
                                 if ($brand_attribute) {
                                     $brand_attribute = $brand_attribute->getFrontend()->getValue($_product);
                                     if (empty($brand_attribute)) {
                                         echo "<img />";
                                     } else {
+
                                         $encode = htmlspecialchars($brand_attribute);
+                                        // $encode = explode(',', $encode);
+
+                                        if (strpos($encode, "Best") !== false)
+                                        {
+                                            $srcImg = $block->getViewFileUrl('images/best2x_icon.png');
+                                            echo "<img src=$srcImg class='img-attribute' alt='best' />";
+                                        }
+                                        
+                                        if (strpos($encode, "Sale") !== false)
+                                        {
+                                            $srcImg = $block->getViewFileUrl('images/sale2x_icon.png');
+                                            echo "<img src=$srcImg class='img-attribute' alt='sale' />";
+                                        }
+
+                                        if (strpos($encode, "Sale Off") !== false)
+                                        {
+                                            $srcImg = $block->getViewFileUrl('images/25off2x_icon.png');
+                                            echo "<img src=$srcImg class='img-attribute' alt='sale off' />";
+                                        }
+                                            
+
+
+                                                // case "Limit":
+                                                //     echo "Sale Off";
+
+                                                // // echo "Your favorite color is neither red, blue, nor green!";
+                                                // var_dump($value);
+
                                         // $encode = explode('&quot', $encode);
-                                        $encode = explode('&quot', $encode)[1];
-                                        $encode = explode('quot;', $encode)[1];
-                                        $encode = explode('&', $encode)[0];
-                                        $srcImg = $block->getBaseUrl() . '/pub/media/' . $encode;
-                                        echo "<img src=$srcImg alt='brand' />";
+                                        // $encode = explode('&quot', $encode)[1];
+                                        // $encode = explode('quot;', $encode)[1];
+                                        // $encode = explode('&', $encode)[0];
+                                        // $srcImg = $block->getBaseUrl() . '/pub/media/' . $encode;
+                                        // echo "<img src=$srcImg alt='brand' />";
                                     }
                                 }
                             ?>
                       </div>
 
-                      <div class="lable-attribute__item sale">
-                            <?php 
-                                $sale_attribute = $_product->getResource()->getAttribute('sale_heroes');
-
-                                if ($sale_attribute) {
-                                    $sale_attribute = $sale_attribute->getFrontend()->getValue($_product);
-                                    if (empty($sale_attribute)) {
-                                        echo "<img />";
-                                    } else {
-                                        $encode = htmlspecialchars($sale_attribute);
-                                        // $encode = explode('&quot', $encode);
-                                        $encode = explode('&quot', $encode)[1];
-                                        $encode = explode('quot;', $encode)[1];
-                                        $encode = explode('&', $encode)[0];
-                                        $srcImg = $block->getBaseUrl() . '/pub/media/' . $encode;
-                                        echo "<img src=$srcImg alt='brand' />";
-                                    }
-                                }
-                            ?>
-                      </div>
-
-                      <div class="lable-attribute__item pecent">
-                            <?php 
-                                $percent_attribute = $_product->getResource()->getAttribute('sale_pecent_heroes');
-
-                                if ($percent_attribute) {
-                                    $percent_attribute = $percent_attribute->getFrontend()->getValue($_product);
-                                    if (empty($percent_attribute)) {
-                                        echo "<img />";
-                                    } else {
-                                        $encode = htmlspecialchars($percent_attribute);
-                                        // $encode = explode('&quot', $encode);
-                                        $encode = explode('&quot', $encode)[1];
-                                        $encode = explode('quot;', $encode)[1];
-                                        $encode = explode('&', $encode)[0];
-                                        $srcImg = $block->getBaseUrl() . '/pub/media/' . $encode;
-                                        echo "<img src=$srcImg alt='brand' />";
-                                    }
-                                }
-                            ?>
-                      </div>
-
-                      <div class="lable-attribute__item limit">
-                            <?php 
-                                $limit_attribute = $_product->getResource()->getAttribute('limit_heroes');
-
-                                if ($limit_attribute) {
-                                    $limit_attribute = $limit_attribute->getFrontend()->getValue($_product);
-                                    if (empty($limit_attribute)) {
-                                        echo "<img />";
-                                    } else {
-                                        $encode = htmlspecialchars($limit_attribute);
-                                        // $encode = explode('&quot', $encode);
-                                        $encode = explode('&quot', $encode)[1];
-                                        $encode = explode('quot;', $encode)[1];
-                                        $encode = explode('&', $encode)[0];
-                                        $srcImg = $block->getBaseUrl() . '/pub/media/' . $encode;
-                                        echo "<img src=$srcImg alt='brand' />";
-                                    }
-                                }
-                            ?>
-                      </div>
                   </div>
                 </div>
             </li>

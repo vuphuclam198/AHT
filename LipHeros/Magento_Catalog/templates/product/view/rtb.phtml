@@ -1,0 +1,51 @@
+<div class="section-rtb">
+    <div class="rtb-content">
+        <?php 
+            $_product = $block->getProduct();
+            $rtb_attribute = $_product->getResource()->getAttribute('product_detail_label')->getFrontend()->getValue($_product);
+
+            if($rtb_attribute!="") { 
+                $encode = htmlspecialchars($rtb_attribute);
+                // $encode = explode(',', $encode);
+                
+                if (strpos($encode, "Waterpool") !== false)
+                {
+                    $srcImg = $block->getViewFileUrl('images/product_v012x-item1.png');
+                    echo "<div class='rtb-item'>
+                            <img src=$srcImg alt='brand' />
+                            <p>Waterpool</p>
+                          </div>";
+                }
+                
+                if (strpos($encode, 'Cruelty') !== false)
+                    {
+                        $srcImg = $block->getViewFileUrl('images/product_v012x-item2.png');
+                        echo "<div class='rtb-item'>
+                                <img src=$srcImg alt='brand' />
+                                <p>Cruelty</p>
+                              </div>";
+                    }
+            
+                if (strpos($encode, 'Vegan') !== false)
+                {
+                    $srcImg = $block->getViewFileUrl('images/product_v012x-item3.png');
+                    echo "<div class='rtb-item'>
+                            <img src=$srcImg alt='brand' />
+                            <p>Vegan</p>
+                          </div>";
+                }
+
+            }
+            // if ($brand_attribute) {
+            //     $brand_attribute = $brand_attribute->getFrontend()->getValue($_product);
+            //     if (empty($brand_attribute)) {
+            //         echo "<img />";
+            //     } else {
+            //         $encode = htmlspecialchars($brand_attribute);
+            //         $encode = explode(',', $encode);
+            //         echo $encode;
+            //     }
+            // }
+        ?>
+    </div>
+</div>

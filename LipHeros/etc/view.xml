@@ -79,8 +79,8 @@
                 <constrain>false</constrain>
             </image>
             <image id="product_page_image_small" type="thumbnail">
-                <width>176</width>
-                <height>266</height>
+                <width>90</width>
+                <height>90</height>
             </image>
             <image id="product_swatch_image_large" type="image"/>
             <image id="product_swatch_image_medium" type="image">
@@ -193,14 +193,14 @@
 
         <!-- Gallery and magnifier theme settings. Start -->
         <var name="gallery">
-            <var name="thumbmargin">10</var>
+            <var name="thumbmargin">16</var>
             <var name="nav">thumbs</var> <!-- Gallery navigation style (false/thumbs/dots) -->
             <var name="loop">true</var> <!-- Gallery navigation loop (true/false) -->
             <var name="keyboard">true</var> <!-- Turn on/off keyboard arrows navigation (true/false) -->
             <var name="arrows">true</var> <!-- Turn on/off arrows on the sides preview (true/false) -->
             <var name="caption">false</var> <!-- Display alt text as image title (true/false) -->
             <var name="allowfullscreen">true</var> <!-- Turn on/off fullscreen (true/false) -->
-            <var name="navdir">horizontal</var> <!-- Sliding direction of thumbnails (horizontal/vertical) -->
+            <var name="navdir">vertical</var> <!-- Sliding direction of thumbnails (horizontal/vertical) -->
             <var name="navarrows">true</var> <!-- Turn on/off on the thumbs navigation sides arrows(true/false) -->
             <var name="navtype">slides</var> <!-- Sliding type of thumbnails (slides/thumbs) -->
             <var name="transition">

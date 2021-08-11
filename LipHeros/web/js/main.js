@@ -174,4 +174,8 @@ require([
     $('.author-account').click(function() {
         $('.author-account').toggleClass('active');
     });
+
+
+    // Accodion attribute datail product
+    $(".product-attr-content").accordion();
 });

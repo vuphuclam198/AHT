@@ -27,9 +27,7 @@ $urlForm = $block->getReviewsUrl() . '#review-form';
 <?php elseif ($block->isReviewEnabled() && $block->getDisplayIfEmpty()) : ?>
     <div class="product-reviews-summary short empty">
         <div class="reviews-actions">
-            <a class="action add" href="<?= $block->escapeUrl($urlForm) ?>">
-                <?= $block->escapeHtml(__('Be the first to review this product')) ?>
-            </a>
+           
         </div>
     </div>
 <?php endif; ?>

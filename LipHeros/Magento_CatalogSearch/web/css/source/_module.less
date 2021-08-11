@@ -84,6 +84,10 @@
             left: -300%;
             margin: 15px 0;
             position: absolute;
+
+            &::placeholder {
+                color: @color-input-header;
+            }
         }
 
         .nested {
@@ -240,6 +244,31 @@
 //
 //  Mobile
 //  _____________________________________________
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__xs) {
+    .header-top-right {
+        .block-search {
+            position: absolute;
+            left: 36px;
+            top: 14px;
+            
+            .label {
+                float: left;
+            }
+
+            .label:before {
+                font-weight: 900;
+            }
+
+            input {
+                margin-top: 0;
+            }
+
+            .control {
+                padding-top: 20px;
+            }
+        }
+    }
+}
 
 .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
     .block-search {
@@ -257,6 +286,10 @@
                 color: @color-white;
                 font-size: 23px;
             }
+        }
+
+        input {
+            margin-top: 35px;
         }
     }
 }

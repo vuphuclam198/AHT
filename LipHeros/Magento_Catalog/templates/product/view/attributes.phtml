@@ -1,0 +1,41 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// phpcs:disable Magento2.Templates.ThisInTemplate.FoundThis
+
+/**
+ * Product additional attributes template
+ *
+ * @var $block \Magento\Catalog\Block\Product\View\Attributes
+ */
+?>
+<?php
+    $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
+    $_product = $block->getProduct();
+?>
+<?php if ($_additional = $block->getAdditionalData()) :?>
+    <div class="additional-attributes-wrapper table-wrapper">
+        <div id="accordion-attribute">
+            <?php foreach ($_additional as $_data) :?>
+                <div data-role="collapsible">
+                    <p class="col label" scope="row" data-role="trigger"><?= $block->escapeHtml($_data['label']) ?></p>
+                    <p class="col data" data-role="content">
+                        <?= $block->escapeHtml($_data['value']) ?>
+                    </p>
+                </div>
+            <?php endforeach; ?>
+            </div>
+    </div>
+<?php endif;?>
+
+
+<script>
+    require([
+        'jquery',
+        'accordion'], function ($) {
+        $("#accordion-attribute").accordion();
+    });
+</script>

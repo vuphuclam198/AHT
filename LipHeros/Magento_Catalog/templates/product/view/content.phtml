@@ -1,0 +1,19 @@
+<?php
+$product = $block->getProduct();
+$text = $product->getData('content_short');
+// strip tags to avoid breaking any html
+$string = strip_tags($text);
+// echo strlen($string);
+if (strlen($string) > 244) {
+
+    // truncate string
+    $stringCut = substr($string, 0, 244);
+    $endPoint = strrpos($stringCut, ' ');
+
+    // echo $endPoint;
+    //if the string doesn't contain any space then it will cut without word basis.
+    $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+    $string .= '... <a href="#">Read More</a>';
+}
+echo $string;
+?>
